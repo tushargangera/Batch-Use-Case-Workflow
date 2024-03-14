@@ -233,9 +233,9 @@ resource "databricks_job" "Consolidated_Trades_Processing" {
   }
 
   email_notifications {
-    on_start = ["tushar.gangera@oracle.com"]
-    on_success = ["tushar.gangera@oracle.com"]
-    on_failure = ["tushar.gangera@oracle.com"]
+    on_start = ["add_email"]
+    on_success = ["add_email"]
+    on_failure = ["add_email"]
     no_alert_for_skipped_runs = false
   }
 
