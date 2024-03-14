@@ -1,4 +1,3 @@
-
 ```markdown
 # Batch Use Case Workflow in AWS Databricks Workspace
 
@@ -15,9 +14,25 @@ Before running this Terraform script, ensure you have the following:
 ## Configuration
 
 1. Clone this repository to your local machine.
-2. Modify the `main.tf` file to set your Databricks host, token, instance profile, and other configurations as needed.
-3. Ensure that your AWS IAM credentials are properly configured and accessible.
-4. Ensure you have the necessary Databricks notebooks stored in your workspace under the specified paths.
+2. Create a `variables.tf` file in the project directory and set the following variables:
+
+    ```hcl
+    variable "databricks_host" {
+      description = "The host URL of your Databricks workspace"
+    }
+
+    variable "databricks_token" {
+      description = "The Databricks API token"
+    }
+
+    variable "databricks_instance_profile" {
+      description = "The ARN of the instance profile to be used by Databricks"
+    }
+    ```
+
+3. Modify the `main.tf` file to reference these variables for Databricks host, token, and instance profile.
+4. Ensure that your AWS IAM credentials are properly configured and accessible.
+5. Ensure you have the necessary Databricks notebooks stored in your workspace under the specified paths.
 
 ## Usage
 
@@ -44,6 +59,7 @@ Before running this Terraform script, ensure you have the following:
 ## Structure
 
 - `main.tf`: Contains the main Terraform configuration for provisioning Databricks resources including instance profile, notebooks, cluster, job, etc.
+- `variables.tf`: Defines input variables for Databricks host, token, and instance profile.
 - `README.md`: This file, providing an overview of the project and instructions for usage.
 - `Notebooks/`: Directory containing the Databricks notebooks referenced in the Terraform script.
 - `outputs.tf`: Defines the output values to be displayed after provisioning.
@@ -53,6 +69,7 @@ Before running this Terraform script, ensure you have the following:
 - Ensure that the specified paths for notebooks in the `main.tf` file match the actual paths in your Databricks Workspace.
 - Customize the email notifications, schedule, cluster settings, and other configurations in the `main.tf` file according to your requirements.
 - Review and test thoroughly before deploying to production environments.
+
 ```
 
-Feel free to adjust and expand this README.md file based on your specific requirements and preferences.
+This README.md now includes instructions for creating a `variables.tf` file and setting the necessary variables for Databricks host, token, and instance profile.
