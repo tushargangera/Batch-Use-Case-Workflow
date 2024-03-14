@@ -1,4 +1,3 @@
-```markdown
 # Batch Use Case Workflow in AWS Databricks Workspace
 
 This Terraform script sets up a batch processing workflow in an AWS Databricks Workspace. The workflow consists of several notebooks that perform various tasks such as data processing, quality checks, and data lake population.
